@@ -42,7 +42,7 @@
 1. 執行 tg-farm-env-img-server.exe 檔案，依序輸入 token、chat_id 最後選擇特生提供的路線 kml 檔，不要選網格那一個喔。
 ![](https://i.imgur.com/K1JG8Ak.png)
 
-![](https://i.imgur.com/Qb2945l.png)
+![](https://i.imgur.com/2WtO88R.png)
 
 ![](https://i.imgur.com/I7sMsq5.png)
 
@@ -84,3 +84,11 @@
 
 ![](https://i.imgur.com/I8H4Fz5.png)
 
+## 使用 .txt 設定 token 跟 chat_id
+如果不想要每次都輸入 token 跟 chat_id，可以像這樣建兩個 txt 文字檔，分別命名為 "token.txt" 跟 "chat_id.txt"，裡面寫剛剛的 token 跟 chat_id，且將路線的 kml 檔案命名為 "route.kml"。將這幾個檔跟 tg-farm-env-img-server.exe 放在同一個資料夾內，系統就會自動抓這幾個檔案的內容。
+
+![](https://i.imgur.com/9oUKYRN.png)
+
+![](https://i.imgur.com/JOfVQoE.png)
+
+![](https://i.imgur.com/uu26eXi.png)
