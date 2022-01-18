@@ -9,7 +9,7 @@ from easygui import fileopenbox
 dirs = os.listdir("./")
 
 if "token.txt" not in dirs:
-    TOKEN = input("請輸入 token")
+    TOKEN = input("請輸入 Telegram bot token：")
 
 else:
     f = open('./token.txt')
@@ -17,13 +17,14 @@ else:
     f.close
 
 if "chat_id.txt" not in dirs:
-    CHAT_ID = input("請輸入 chat_id")
+    CHAT_ID = input("請輸入你的 chat_id：")
 else:
     f = open('./chat_id.txt')
     CHAT_ID = str(f.read()) # Token of Cane Toad Reporting
     f.close
 
 if "route.kml" not in dirs:
+    print("請選擇路線的 kml 檔案：")
     route_path = fileopenbox()
 
     with open(route_path , encoding='utf-8') as kml_route:
@@ -35,6 +36,8 @@ else:
 
 
 bot = ExtBot(TOKEN)
+
+print("yout telegram bot server is runing...")
 
 current_site = None
 
@@ -141,6 +144,7 @@ def up_load(update, context):
         for ewsn, img in zip(("東", "南", "西", "北"), imgs):
             img.download('./%s/%s_%s.jpg' % (dir_name, current_site, ewsn))
         bot.send_message(CHAT_ID, "已成功上傳")
+        print("images of site %s have been uploaded" % current_site)
         return ConversationHandler.END
 
     elif yn == "no":
