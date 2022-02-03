@@ -150,7 +150,7 @@ def up_load(update, context):
         return ConversationHandler.END
 
     elif yn == "no":
-
+        imgs = []
         bot.send_message(CHAT_ID, "已取消上傳")
         return ConversationHandler.END
 
