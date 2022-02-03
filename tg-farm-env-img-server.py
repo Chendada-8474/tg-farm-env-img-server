@@ -137,6 +137,7 @@ def get_photo_n(update, context):
 
 
 def up_load(update, context):
+    global imgs
     yn = update.callback_query.data
 
     if yn == "yes":
@@ -144,6 +145,7 @@ def up_load(update, context):
         for ewsn, img in zip(("東", "南", "西", "北"), imgs):
             img.download('./%s/%s_%s.jpg' % (dir_name, current_site, ewsn))
         bot.send_message(CHAT_ID, "已成功上傳")
+        imgs = []
         print("images of site %s have been uploaded" % current_site)
         return ConversationHandler.END
 
